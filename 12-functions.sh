@@ -20,5 +20,5 @@ then
         echo "installation is successful."
     fi
 else
- echo "mysql package is already installed.nothing to do"
+    echo "mysql package is already installed.nothing to do"
 fi
