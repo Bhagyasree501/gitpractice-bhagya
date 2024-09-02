@@ -33,7 +33,7 @@ then
     VALIDATE $? "mysql"
 
 else
-    echo "$B hey! looks like mysql is already installed.nothing to do $N"
+    echo  -e "$B hey! looks like mysql is already installed.nothing to do $N"
 fi
 dnf list installed nginx
 if [ $? -ne 0 ]
@@ -42,5 +42,5 @@ then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else
-    echo "$B hey! looks like nginx is already installed.nothing to do $N"
+    echo -e "$B hey! looks like nginx is already installed.nothing to do $N"
 fi
