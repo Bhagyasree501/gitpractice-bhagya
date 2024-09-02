@@ -22,3 +22,19 @@ then
 else
     echo "mysql package is already installed.nothing to do"
 fi
+
+dnf list installed nginx
+if [ $? -ne 0 ]
+then
+    echo "nginx is not seen in the installed packages list.hence installing it.."
+    dnf install nginx -y
+    if [ $? -ne 0 ]
+    then
+        echo "nginx package installation has failed. please check the shellscript again"
+        exit 1
+    else
+        echo "nginx successfully installed"
+    fi
+else
+    echo "nginx package is already installed.Nothing to do"
+fi
