@@ -6,6 +6,7 @@ if [ $USER -ne 0 ]
 then
     echo "you are not currently in root user access. please try again with root user access"
     exit 1
+    
 fi
 dnf list installed mysql
 if [ $? -ne 0 ]
