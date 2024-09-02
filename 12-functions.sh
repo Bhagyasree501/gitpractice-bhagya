@@ -1,25 +1,23 @@
 #!/bin/bash/
-
 USER=$(id -u)
 echo "your user id is: $USER"
 if [ $USER -ne 0 ]
 then
-    echo "you are not currently in root user access. please try again with root user access"
+    echo "hey! you are not having root access. try repeating with root access"
     exit 1
-    
 fi
 dnf list installed mysql
-if [ $? -ne 0 ]
+if[ $? -ne 0 ]
 then
-    echo "mysql is not seen in the installed packages list.hence installing it.."
+    echo "looks like mysql is not installed.I am instaaling it now!"
     dnf install mysql -y
     if [ $? -ne 0 ]
     then
-        echo "mqsql package installation has failed. please check the shellscript again"
+        echo "hey! installation process failed.please check yourshell script"
         exit 1
     else
-        echo "mysql successfully installed"
+        echo "hey! mysql is successfully intalled now"
     fi
 else
-    echo "mysql package is already installed.Nothing to do"
+    echo "hey! looks like mysql is already installed.nothing to do"
 fi
