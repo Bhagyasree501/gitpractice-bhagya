@@ -5,4 +5,4 @@ FRUITS=("plum" "apple" "orange")
 #In above array, size of the array is 3
 echo "The first fruit is ${FRUITS[0]}"
 echo "The second fruit is ${FRUITS[1]}"
-echo "All fruits in this array are ${FRUIT[@]}"
+echo "All fruits in this array are ${FRUITS[@]}"
