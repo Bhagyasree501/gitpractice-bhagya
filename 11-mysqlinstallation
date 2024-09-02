@@ -1,0 +1,4 @@
+#!/bin/bash/
+
+USER=$(id -u)
+echo "your user id is: $USER"
