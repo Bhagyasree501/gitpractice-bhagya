@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FRUITS=["plum" "apple" "orange"] 
+FRUITS=("plum" "apple" "orange")
 # In any array, index value starts with 0
 #In above array, size of the array is 3
 echo "The first fruit is ${FRUITS[0]}"
