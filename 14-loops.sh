@@ -18,10 +18,11 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$R hey! looks like installation of mysql failed.please check your shell script $N"
+        echo -e "$R hey! looks like installation of $2 failed.please check your shell script $N"
         exit 1
     else
-        echo -e "$G hey! looks like installation of mysql has been successful. $N"
+        echo -e "$G hey! looks like installation of $2 has been successful. $N"
+    fi
 }
 
 CHECK_ROOT #I am calling CHECK_ROOT function
@@ -31,7 +32,7 @@ if [ $? -ne 0 ]
 then
     echo -e "$Y hey!looks like mysql is not installed.let me install it now $N"
     dnf install mysql -y
-    VALIDATE $? # I am calling validate function here
+    VALIDATE $? "mysql" # I am calling validate function here
 else
     echo -e "$B hey! looks like mysql is already installed.nothing to do $N"
 fi
