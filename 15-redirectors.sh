@@ -18,19 +18,19 @@ USER=$(id -u)
 CHECK_ROOT(){
     if [ $USER -ne 0 ]
     then
-        echo -e "$R hey!you are not a root user.please try with root user access. $N" &>>$FILE_NAME
+        echo -e "$R hey!you are not a root user.please try with root user access. $N" | tee -a $FILE_NAME
         exit 1
     else
-        echo -e "$G hey! good that you are using root access $N"
+        echo -e "$G hey! good that you are using root access $N" | tee -a $FILE_NAME
     fi
 }
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$R hey! looks like installation of $2 failed.please check your shell script $N" &>>$FILE_NAME
+        echo -e "$R hey! looks like installation of $2 failed.please check your shell script $N" | tee -a $FILE_NAME
         exit 1
     else
-        echo -e "$G hey! looks like installation of $2 has been successful. $N" &>>$FILE_NAME
+        echo -e "$G hey! looks like installation of $2 has been successful. $N" | tee -a $FILE_NAME
     fi
 }
 HELPUSER(){
@@ -50,10 +50,10 @@ do
 dnf list installed $PACKAGE &>>$FILE_NAME
 if [ $? -ne 0 ]
 then
-    echo -e "$Y hey!looks like $PACKAGE is not installed.let me install it now $N" &>>$FILE_NAME
+    echo -e "$Y hey!looks like $PACKAGE is not installed.let me install it now $N" | tee -a $FILE_NAME
     dnf install $PACKAGE -y &>>$FILE_NAME
     VALIDATE $? "$PACKAGE" # I am calling validate function here
 else
-    echo -e "$B hey! looks like $PACKAGE is already installed.nothing to do $N" &>>$FILE_NAME
+    echo -e "$B hey! looks like $PACKAGE is already installed.nothing to do $N" | tee -a $FILE_NAME
 fi
 done
