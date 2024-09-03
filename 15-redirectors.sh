@@ -7,8 +7,8 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-echo "$SCRIPT_NAME"
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+echo "$TIMESTAMP"
 FILE_NAME="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER
 
