@@ -27,12 +27,15 @@ VALIDATE(){
 
 CHECK_ROOT #I am calling CHECK_ROOT function
 
-dnf list installed mysql
+for PACKAGE in $@ # all arugemttns provided by user are saved into #@. variable 'PACKAGE' picks one arg at a time while suing for loop.
+do
+dnf list installed $PACKAGE
 if [ $? -ne 0 ]
 then
-    echo -e "$Y hey!looks like mysql is not installed.let me install it now $N"
-    dnf install mysql -y
-    VALIDATE $? "mysql" # I am calling validate function here
+    echo -e "$Y hey!looks like $PACKAGE is not installed.let me install it now $N"
+    dnf install $PACKAGE -y
+    VALIDATE $? "$PACKAGE" # I am calling validate function here
 else
-    echo -e "$B hey! looks like mysql is already installed.nothing to do $N"
+    echo -e "$B hey! looks like $PACKAGE is already installed.nothing to do $N"
 fi
+done
