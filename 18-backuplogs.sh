@@ -15,7 +15,7 @@ then
     USAGE
 fi
 
-if [ -d SOURCE_DIR ]
+if [ -d $SOURCE_DIR ]
 then
     echo "the source directory $SOURCE_DIR exists "
 else
@@ -24,7 +24,7 @@ else
     exit 1
 fi
 
-if [ -d DEST_DIR ]
+if [ -d $DEST_DIR ]
 then
     echo "the destination directory $DEST_DIR exists"
 else
