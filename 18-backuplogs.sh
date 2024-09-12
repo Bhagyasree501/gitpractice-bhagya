@@ -10,7 +10,7 @@ USAGE(){
     exit 1
 }
 
-if [$# -lt 2]
+if [ $# -lt 2 ]
 then
     USAGE
 fi
