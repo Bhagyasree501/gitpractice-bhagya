@@ -2,7 +2,7 @@
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${$3:-14} #picks arg3 value provided by user. If not, takes 14 days as default value.
+DAYS=${3:-14} #picks arg3 value provided by user. If not, takes 14 days as default value.
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 USAGE(){
