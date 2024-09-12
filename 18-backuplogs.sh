@@ -38,6 +38,7 @@ else
 fi
 
 VAR=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+echo "$VAR"
 if [ ! -z $VAR ]
 then
     echo -e "$G the files which are older than $DAYS days are: $VAR $N"
