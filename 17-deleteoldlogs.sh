@@ -6,7 +6,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-DIRPATH= "/home/ec2-user/logs"
+DIRPATH="/home/ec2-user/logs"
 if [ -d $DIRPATH ]
 then
     echo "given directory is $DIRPATH and it exists"
