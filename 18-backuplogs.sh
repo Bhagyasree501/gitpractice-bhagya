@@ -18,9 +18,9 @@ fi
 if [ -d SOURCE_DIR ]
 then
     echo "the source directory $SOURCE_DIR exists "
-    echo "$SOURCE_DIR"
 else
-    echo "the source directory provided by user does not exist"
+    echo "the source directory $SOURCE_DIR provided by user does not exist"
+
     exit 1
 fi
 
@@ -28,7 +28,7 @@ if [ -d DEST_DIR ]
 then
     echo "the destination directory $DEST_DIR exists"
 else
-    echo "the destination directory provided by user does not exist"
+    echo "the destination directory $DEST_DIR provided by user does not exist"
     exit 1
 fi
 
