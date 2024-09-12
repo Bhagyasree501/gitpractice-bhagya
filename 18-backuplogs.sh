@@ -42,8 +42,8 @@ then
         echo "successfully zipped files older than $DAYS"
         while IFS= read -r FILES
         do
-        echo "the file getting deleted in source directory is: $FILE"
-        rm -rf $FILE
+        echo "the file getting deleted in source directory is: $FILES"
+        rm -rf $FILES
         done <<<$VAR
 
     else
