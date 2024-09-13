@@ -8,6 +8,7 @@ while IFS= read -r line
 do
     echo "$line"
     FOLDERNAME=$(echo $line | awk -F " " '{print $NF}')
+    echo "$FOLDERNAME"
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" f1)
     echo "storage of $FOLDERNAME is : $USAGE"
     if [ "$USAGE" -ge "$THRESHOLD" ]
