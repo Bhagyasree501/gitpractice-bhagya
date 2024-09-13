@@ -37,7 +37,7 @@ else
     exit 1
 fi
 
-VAR=$(find $SOURCE_DIR -name "*.log" -mtime type -f +13)
+VAR=$(find $SOURCE_DIR -name "*.log" -mtime +13)
 echo "$VAR"
 if [ ! -z $VAR ]
 then
