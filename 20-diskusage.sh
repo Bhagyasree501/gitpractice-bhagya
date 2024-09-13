@@ -15,8 +15,6 @@ do
     if [ "$USAGE" -ge "$THRESHOLD" ]
     then
         echo "the storage used by $FOLDERNAME is: $USAGE. And this vlue is grated than $THRESHOLD "
-    else 
-        exit 1
     fi
 done <<<$DISKUSAGE
 
