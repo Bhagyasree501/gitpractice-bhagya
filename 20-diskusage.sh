@@ -5,6 +5,7 @@ DISKUSAGE=$(df -hT | grep xfs)
 G="\e[32m"
 N="\e[0m"
 
+echo "$DISKUSAGE"
 
 while IFS= read -r line
 do
