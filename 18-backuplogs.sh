@@ -51,7 +51,7 @@ then
         do
         echo -e "$G the file getting deleted in source directory is: $FILES $N"
         rm -rf $FILES
-        done <<<$VAR
+        done <<<$VARR
 
     else
         echo -e "$R zipping older log files had failed $N"
