@@ -6,6 +6,7 @@ DISKUSAGE=$(df -hT | grep xfs)
 
 while IFS= read -r line
 do
+    echo "$line"
     FOLDERNAME=$(echo $line | awk -F " " '{print $NF}')
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" f1)
     echo "storage of $FOLDERNAME is : $USAGE"
