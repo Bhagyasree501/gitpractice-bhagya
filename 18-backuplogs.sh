@@ -37,11 +37,11 @@ else
     exit 1
 fi
 
-VAR=$(find ${SOURCE_DIR} -name "*.log" -type f -mtime +13)
-echo "$VAR"
-if [ ! -z $VAR ]
+VARR=$(find ${SOURCE_DIR} -name "*.log" -type f -mtime +13)
+echo "$VARR"
+if [ ! -z $VARR ]
 then
-    echo -e "$G the files which are older than $DAYS days are: $VAR $N"
+    echo -e "$G the files which are older than $DAYS days are: $VARR $N"
     ZIPFILENAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip "$ZIPFILENAME" -@
     if [ -f $ZIPFILENAME ]
