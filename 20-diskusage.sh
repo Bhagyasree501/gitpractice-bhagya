@@ -2,8 +2,8 @@
 
 THRESHOLD=5 #just to test my scenarios.in realtime we have to put 75
 DISKUSAGE=$(df -hT | grep xfs)
-G="e\[32m"
-N="\e[om"
+G="\e[32m"
+N="\e[0m"
 
 
 while IFS= read -r line
